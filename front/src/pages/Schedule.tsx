@@ -6,12 +6,7 @@ export const Schedule: FC = memo(() => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-              <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto sm:h-10"
-                src=""
-                alt="あぷりの画像"
-              />
+            <div className="text-6xl">[bot-i]</div>
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               <a href="./Profile">
               <img
@@ -40,7 +35,7 @@ export const Schedule: FC = memo(() => {
               <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">大学の授業</td>
               <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">神戸市灘区六甲台町</td>
               <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+                <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-orange-300 px-4 py-2 text-base font-medium text-slate-500 shadow-sm hover:bg-orange-400">
                   おすすめを見る
                 </a>
               </td>
@@ -50,7 +45,7 @@ export const Schedule: FC = memo(() => {
               <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">レコチョクハッカソンDay1</td>
               <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">東京都渋谷区渋谷2丁目</td>
               <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+              <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-orange-300 px-4 py-2 text-base font-medium text-slate-500 shadow-sm hover:bg-orange-400">
                   おすすめを見る
                 </a>
               </td>
@@ -60,7 +55,7 @@ export const Schedule: FC = memo(() => {
               <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">レコチョクハッカソンDay2</td>
               <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">東京都渋谷区渋谷2丁目</td>
               <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
-                <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+              <a href="#" className="flex w-full items-center justify-center rounded-md border border-transparent bg-orange-300 px-4 py-2 text-base font-medium text-slate-500 shadow-sm hover:bg-orange-400">
                   おすすめを見る
                 </a>
               </td>

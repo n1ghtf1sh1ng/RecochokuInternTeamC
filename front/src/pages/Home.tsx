@@ -1,11 +1,10 @@
 // import { signInWithPopup, User } from "firebase/auth";
 // import { FC, memo } from "react";
 // import { useAuthState } from "react-firebase-hooks/auth";
-// // import { useRecoilState } from "recoil";
+// import { useRecoilState } from "recoil";
 
 // import { auth, provider } from "../firebase";
 // // import { userState } from "../store/userState";
-
 // export const Home: FC = memo(() => {
 //   const [user] = useAuthState(auth);
 //   // const [userInfo, setUserInfo] = useRecoilState<User | null | undefined>(
@@ -43,8 +42,6 @@
 //     </div>
 //   );
 // });
-
-
 <div className="bg-orange">
   <div
     style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
