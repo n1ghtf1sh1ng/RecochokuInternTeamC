@@ -1,6 +1,8 @@
 import { FC, memo } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Profile: FC = memo(() => {
+  let navigate = useNavigate();
   return (
     <div>
       <ul>
@@ -56,6 +58,14 @@ export const Profile: FC = memo(() => {
                       <option value="">2000円以上3000円未満</option>
                     </select>
                   </div>
+                </div>
+                <div className={"w-full text-center"}>
+                  <button
+                    className={"border-2 rounded p-2 bg-gray-200"}
+                    onClick={() => navigate("/schedule")}
+                  >
+                    戻る
+                  </button>
                 </div>
               </form>
             </div>
