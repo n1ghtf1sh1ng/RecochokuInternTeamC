@@ -27,8 +27,8 @@ export const Home: FC = memo(() => {
   };
 
   return (
-    <div>
-      <h1>App Name</h1>
+    <div className ={"text-center align-middle"}>
+      <h1  className = {"bg-orange-300 max-h-7"}>App Name</h1>
       {user ? (
         <>
           <img src={auth.currentUser?.photoURL ?? undefined} />
@@ -36,8 +36,9 @@ export const Home: FC = memo(() => {
           <button onClick={() => auth.signOut()}>サインアウト</button>
         </>
       ) : (
-        <button onClick={signInWithGoogle}>Googleアカウントでログイン</button>
+        <button className = {"bg-slate-100 "}  onClick={signInWithGoogle}>Googleアカウントでログイン</button>
       )}
     </div>
   );
 });
+
