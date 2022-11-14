@@ -34,10 +34,10 @@ export const Home: FC = memo(() => {
       <div className={"mt-8"}>
         <h1
           className={
-            "bg-orange-300  mt-5 my-10 mb-10 p-20 rounded-md text-5xl font-bold"
+            "bg-orange-300  mt-5 my-10 mb-10 p-20 rounded-md text-8xl font-bold font-mono text-slate-500"
           }
         >
-          App Name
+          [bot-i]
         </h1>
         {user ? (
           <>
