@@ -1,8 +1,13 @@
 import { FC, memo } from "react";
 import { useNavigate } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+
+import { userState } from "../store/userState";
 
 export const Profile: FC = memo(() => {
   let navigate = useNavigate();
+  const userData = useRecoilValue(userState);
+
   return (
     <div>
       <ul>
@@ -25,20 +30,7 @@ export const Profile: FC = memo(() => {
                       type="text"
                       className="p-2 pl-6 rounded w-full border-black border-2"
                       readOnly={true}
-                      value={"Nakashima Yuta"}
-                    />
-                  </div>
-                </div>
-                <div className="mb-6">
-                  <div className="flex my-2">
-                    <label className="text-xl font-bold mr-6 w-48">
-                      メールアドレス
-                    </label>
-                    <input
-                      type="text"
-                      className="p-2 pl-6 rounded w-full border-black border-2"
-                      readOnly={true}
-                      value={"n0904yBUNJOU@gmail.com"}
+                      value={userData?.name ?? undefined}
                     />
                   </div>
                 </div>

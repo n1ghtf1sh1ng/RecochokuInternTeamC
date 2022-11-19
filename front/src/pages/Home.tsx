@@ -1,28 +1,24 @@
-import { signInWithPopup, User } from "firebase/auth";
+import { signInWithPopup } from "firebase/auth";
 import { FC, memo } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-// import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 
 import { auth, provider } from "../firebase";
-// import { userState } from "../store/userState";
+import { userState } from "../store/userState";
 
 export const Home: FC = memo(() => {
   let navigate = useNavigate();
-  const [user] = useAuthState(auth);
-  // const [userInfo, setUserInfo] = useRecoilState<User | null | undefined>(
-  //   userState
-  // );
-  // setUserInfo(user);
-  // const setUser = useRecoilState(userState);
+  const setUserData = useSetRecoilState(userState);
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
-      .then((result) => {
+      .then(() => {
         console.log("Googleアカウントでログインしました。");
-        console.log(result);
-        // console.log(userInfo);
-        console.log(user?.uid);
-        navigate("/schedule");
+        console.log(auth.currentUser?.displayName);
+        setUserData({
+          name: auth.currentUser?.displayName,
+          photoURL: auth.currentUser?.photoURL,
+        });
+        navigate("/profile");
       })
       .catch((error) => {
         console.log(error);
@@ -39,10 +35,12 @@ export const Home: FC = memo(() => {
         >
           [bot-i]
         </h1>
-        {user ? (
+        {auth.currentUser?.displayName ? (
           <>
-            <img src={auth.currentUser?.photoURL ?? undefined} />
-            {/* <p>{userInfo?.email}</p> */}
+            <img
+              src={auth.currentUser?.photoURL ?? undefined}
+              alt="profile-icon"
+            />
             <button onClick={() => auth.signOut()}>サインアウト</button>
           </>
         ) : (

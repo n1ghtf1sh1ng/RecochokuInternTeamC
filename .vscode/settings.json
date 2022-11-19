@@ -1,0 +1,33 @@
+{
+  // 差分を横に並べて表示せずに、行内に表示する
+  "diffEditor.renderSideBySide": false,
+  // ファイル保存時に自動フォーマットする
+  "editor.formatOnSave": true,
+  // 現在の行を強調表示する
+  "editor.renderLineHighlight": "all",
+  // 空白文字を表示する
+  "editor.renderWhitespace": "all",
+  // ウィンドウ幅右端で折り返す
+  "editor.wordWrap": "on",
+  // 改行コード
+  "files.eol": "\n",
+  // ファイル保存時に新しい行を末尾に挿入する
+  "files.insertFinalNewline": true,
+  // アイコンテーマの指定
+  "workbench.iconTheme": "material-icon-theme",
+  // 言語別指定
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  },
+  "prettier.tabWidth": 2,
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "window.zoomLevel": -1
+}
