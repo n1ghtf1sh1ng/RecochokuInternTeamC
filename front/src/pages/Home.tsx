@@ -18,7 +18,7 @@ export const Home: FC = memo(() => {
           name: auth.currentUser?.displayName,
           photoURL: auth.currentUser?.photoURL,
         });
-        navigate("/profile");
+        navigate("/schedule");
       })
       .catch((error) => {
         console.log(error);
