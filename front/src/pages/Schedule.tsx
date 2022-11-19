@@ -12,7 +12,7 @@ export const Schedule: FC = memo(() => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <div className="text-6xl">[bot-i]</div>
+            <div className="text-7xl font-mono h-full text-slate-500">[bot-i]</div>
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               <img
                 className="inline-block h-20 w-20 rounded-full ring-2 ring-white"
