@@ -14,7 +14,6 @@ export const Home: FC = memo(() => {
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential?.accessToken;
-        console.log(token);
         setUserData({
           name: result.user.displayName ?? "",
           photoURL: result.user.photoURL ?? "",

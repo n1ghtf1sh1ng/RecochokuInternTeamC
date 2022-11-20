@@ -11,7 +11,7 @@ export const Schedule: FC = memo(() => {
   Modal.setAppElement("#root");
 
   // Google Calender API を使用する場合
-  // const API_KEY: string = "AIzaSyDvqKFv6daUIydLqf1ZdufziKDsvmJlYBY";
+  // const API_KEY: string = process.env.REACT_APP_FIREBASE_API_KEY;
   // const axiosGoogleCalendar: AxiosInstance = axios.create({
   //   headers: {
   //     Authorization: `Bearer ${userData?.access_token}`,
