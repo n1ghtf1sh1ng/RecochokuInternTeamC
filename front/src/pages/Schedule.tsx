@@ -10,6 +10,27 @@ export const Schedule: FC = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   Modal.setAppElement("#root");
 
+  // Google Calender API を使用する場合
+  // const API_KEY: string = "AIzaSyDvqKFv6daUIydLqf1ZdufziKDsvmJlYBY";
+  // const axiosGoogleCalendar: AxiosInstance = axios.create({
+  //   headers: {
+  //     Authorization: `Bearer ${userData?.access_token}`,
+  //     Accept: "application/json",
+  //   },
+  //   decompress: false,
+  // });
+  // const getCalendarList = (axiosInstance: AxiosInstance) => {
+  //   axiosInstance
+  //   .get(
+  //     `https://www.googleapis.com/calendar/v3/users/me/calendarList?key=${API_KEY}`
+  //   )
+  //   .then((res) => {
+  //     console.log(res);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+
   return (
     <div>
       <Modal isOpen={isOpen}>
