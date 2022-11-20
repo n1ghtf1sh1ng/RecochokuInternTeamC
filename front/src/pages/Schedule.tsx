@@ -1,18 +1,48 @@
-import { FC, memo } from "react";
+import { FC, memo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { userState } from "../store/userState";
+import Modal from "react-modal";
 
 export const Schedule: FC = memo(() => {
   let navigate = useNavigate();
   const userData = useRecoilValue(userState);
+  const [isOpen, setIsOpen] = useState(false);
+  Modal.setAppElement("#root");
+
+  // Google Calender API を使用する場合
+  // const API_KEY: string = "AIzaSyDvqKFv6daUIydLqf1ZdufziKDsvmJlYBY";
+  // const axiosGoogleCalendar: AxiosInstance = axios.create({
+  //   headers: {
+  //     Authorization: `Bearer ${userData?.access_token}`,
+  //     Accept: "application/json",
+  //   },
+  //   decompress: false,
+  // });
+  // const getCalendarList = (axiosInstance: AxiosInstance) => {
+  //   axiosInstance
+  //   .get(
+  //     `https://www.googleapis.com/calendar/v3/users/me/calendarList?key=${API_KEY}`
+  //   )
+  //   .then((res) => {
+  //     console.log(res);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 
   return (
     <div>
+      <Modal isOpen={isOpen}>
+        <button onClick={() => setIsOpen(false)}>Close Modal</button>
+        <h1>Is Open Modal</h1>
+      </Modal>
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <div className="text-7xl font-mono h-full text-slate-500">[bot-i]</div>
+            <div className="text-7xl font-mono h-full text-slate-500">
+              [bot-i]
+            </div>
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               <img
                 className="inline-block h-20 w-20 rounded-full ring-2 ring-white"
@@ -56,7 +86,7 @@ export const Schedule: FC = memo(() => {
                   <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
                     <button
                       className="flex w-full items-center justify-center rounded-md border border-transparent bg-orange-300 px-4 py-2 text-base font-medium text-slate-500 shadow-sm hover:bg-orange-400"
-                      onClick={() => navigate("#")}
+                      onClick={() => setIsOpen(true)}
                     >
                       おすすめを見る
                     </button>
@@ -75,7 +105,7 @@ export const Schedule: FC = memo(() => {
                   <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
                     <button
                       className="flex w-full items-center justify-center rounded-md border border-transparent bg-orange-300 px-4 py-2 text-base font-medium text-slate-500 shadow-sm hover:bg-orange-400"
-                      onClick={() => navigate("#")}
+                      onClick={() => setIsOpen(true)}
                     >
                       おすすめを見る
                     </button>
@@ -94,7 +124,7 @@ export const Schedule: FC = memo(() => {
                   <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400">
                     <button
                       className="flex w-full items-center justify-center rounded-md border border-transparent bg-orange-300 px-4 py-2 text-base font-medium text-slate-500 shadow-sm hover:bg-orange-400"
-                      onClick={() => navigate("#")}
+                      onClick={() => setIsOpen(true)}
                     >
                       おすすめを見る
                     </button>

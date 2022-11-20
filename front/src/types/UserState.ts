@@ -1,4 +1,5 @@
 export type UserState = {
-  name?: string | null,
-  photoURL?: string | null,
+  name: string,
+  photoURL: string,
+  access_token: string,
 }

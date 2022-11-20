@@ -1,4 +1,4 @@
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FC, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
@@ -11,14 +11,16 @@ export const Home: FC = memo(() => {
   const setUserData = useSetRecoilState(userState);
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
-      .then(() => {
-        console.log("Googleアカウントでログインしました。");
-        console.log(auth.currentUser?.displayName);
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential?.accessToken;
+        console.log(token);
         setUserData({
-          name: auth.currentUser?.displayName,
-          photoURL: auth.currentUser?.photoURL,
+          name: result.user.displayName ?? "",
+          photoURL: result.user.photoURL ?? "",
+          access_token: token ?? "",
         });
-        navigate("/profile");
+        navigate("/schedule");
       })
       .catch((error) => {
         console.log(error);

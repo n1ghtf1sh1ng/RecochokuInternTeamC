@@ -16,4 +16,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const provider = new GoogleAuthProvider();
+export const provider = new GoogleAuthProvider().addScope('https://www.googleapis.com/auth/calendar.readonly');
+
+// Google Calendar API を使用する場合はこのスコープを追加する。
+// export const provider = new GoogleAuthProvider().addScope("https://www.googleapis.com/auth/calendar.settings.readonly");
